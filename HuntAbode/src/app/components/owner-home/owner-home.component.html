@@ -1,0 +1,82 @@
+<main>
+    <section class="section section-shaped section-lg">
+      <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-header bg-white pb-5">
+                <div class="text-muted text-center mb-3">
+                  <small>Welcome To HuntAbode</small>
+                </div>
+                <div class="btn-wrapper text-center">
+                 
+                </div>
+              </div>
+              <div class="card-body px-lg-5 py-lg-5">
+                <div class="text-center text-muted mb-4">
+                  <small>HuntAbode Owner login</small>
+                </div>
+                <form role="form" (ngSubmit)="onSubmit()" [formGroup]="ownerForm">
+                  <div class="form-group mb-3">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="Name" type="text" id="name" required formControlName="name" (focus)="focus=true" (blur)="focus=false" >
+                      
+                    </div>
+                
+                    <small class="text-danger ml-3" *ngIf="f.name.touched && f.name.invalid">*Name is required</small>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="Email" type="text" id="email" formControlName="email" (focus)="focus1=true" (blur)="focus1=false" >
+                    </div>
+                    <small class="text-danger ml-3" *ngIf="f.email.touched && f.email.invalid">*Email is required</small>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="Contact" type="text" id="contact" formControlName="contactNumber" (focus)="focus1=true" (blur)="focus1=false">
+                    </div>
+                    <medium *ngIf="f.contactNumber.touched && f.contactNumber.invalid" class="text-danger ml-3">
+                      <small *ngIf="f.contactNumber.errors.required">*Mobile Number is required.</small>
+                      <small *ngIf="f.contactNumber.errors.pattern">*Please, Enter 10 digit Mobile Number.</small>
+                    </medium>
+                  </div>
+                  
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary my-4" [disabled]="!ownerForm.valid">Submit</button>
+                    <br>
+                    <small class="text-danger ml-3" *ngIf="resultStatus==400">Bad Request</small>
+                    <small class="text-danger ml-3" *ngIf="resultStatus==404">Not Found Error!!</small>
+                    <small class="text-danger ml-3" *ngIf="resultStatus==408"> Request Time Out</small>
+                    <small class="text-danger ml-3" *ngIf="resultStatus==500">Internal Server Error</small>
+                    <small class="text-danger ml-3" *ngIf="resultStatus==503">Service Unavailable</small>
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  

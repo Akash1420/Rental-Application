@@ -1,0 +1,78 @@
+.location{
+    width: 80%;
+    
+}
+
+.badge{
+    cursor: pointer;
+   
+}
+
+.loc{
+    color: white;
+}
+
+.container{
+    text-align: center;
+}
+
+.badge-pill0,.badge-pill6{
+    color:#ED4C67;
+}
+
+
+.badge-pill1,.badge-pill7{
+    color:rgb(66, 66, 184);
+}
+
+.badge-pill2,.badge-pill8{
+    color:#4b4b4b;
+}
+
+.badge-pill3,.badge-pill5{
+    color: green;
+}
+
+.badge-pill4{
+color: #82589F;
+}
+
+.sm{
+    color:#0c2461;
+}
+
+.ff{
+    color: #009432;
+}
+
+.fd{
+    color: #ED4C67;
+}
+
+.sin{
+    color: #0652DD;
+}
+
+.sh{
+    color: #EE5A24;
+}
+
+.fl{
+    color: #6F1E51;
+}
+
+.pg{
+    color: #009432;
+}
+
+.bn{
+    color: #EA2027;
+}
+
+.cl{
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+}
+
+ngb-carousel:active{
+    border:1px solid white !important;
+}

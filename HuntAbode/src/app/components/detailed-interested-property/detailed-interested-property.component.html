@@ -1,0 +1,130 @@
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card card-profile shadow mt--300">
+        <div class="px-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 order-lg-2">
+              <div class="card-profile-image">
+                <a href="javascript:void(0)">
+
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+              <div class="card-profile-actions py-4 mt-lg-0">
+                <a href="javascript:void(0)" class="btn btn-lg btn-success mr-4" *ngIf="approve=='Approved'">Status:
+                  {{approve}}</a>
+                <a href="javascript:void(0)" class="btn btn-lg btn-danger mr-4" *ngIf="approve=='Rejected'">Status:
+                  {{approve}}</a>
+                <a href="javascript:void(0)" class="btn btn-lg btn-warning mr-4" *ngIf="approve=='Pending'">Status:
+                  {{approve}}</a>
+              </div>
+            </div>
+            <div class="col-lg-4 order-lg-1">
+              <div class="card-profile-stats d-flex justify-content-center">
+                <div>
+                  <span class="heading">🚪</span>
+                  <span class="description">{{home.type}}</span>
+                </div>
+                <div>
+                  <span class="heading">🛏️</span>
+                  <span class="description">{{home.rooms}} Rooms</span>
+                </div>
+                <div>
+                  <span class="heading">📍</span>
+                  <span class="description">{{home.location}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="text-center mt-3">
+
+            <!--Insert Images here-->
+            <ngb-carousel (click)="open(classic2,  'Notification', '')">
+              <ng-template *ngFor="let im of home.urlOfImage; let index=i;" ngbSlide>
+                <img src={{im}} class="img-fluid rounded shadow-lg" style="width: 350px;" alt="First slide">
+
+              </ng-template>
+
+            </ngb-carousel>
+
+            <ng-template #classic2 let-c="close" let-d="dismiss">
+              <div class="modal-content cl">
+                <div class="modal-header">
+                  <h6 class="modal-title" id="modal-title-notification">{{home.name}}</h6>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                    (click)="d('Cross click')">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="py-3 text-center">
+                    <ngb-carousel>
+                      <ng-template *ngFor="let im of home.urlOfImage; let index=i;" ngbSlide>
+                        <img src={{im}} class="img-fluid rounded shadow-lg" style="width: 450px;height: 260px;">
+
+                      </ng-template>
+
+                    </ngb-carousel>
+                  </div>
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal"
+                    (click)="c('Close click')">Close</button>
+                </div>
+              </div>
+            </ng-template>
+
+
+            <br /><br />
+            <h3>{{home.name}}
+
+            </h3>
+            <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>{{home.detailedLocation}}</div>
+            <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>
+              <span class="badge badge-pill badge-primary">{{home.occupancy}}</span>
+              <span class="badge badge-pill badge-primary">{{home.status}}</span>
+              <span class="badge badge-pill badge-primary">{{home.furnished}}</span>
+            </div>
+            <div><i class="ni education_hat mr-2"></i>
+              <a href="javascript:void(0)" class="btn btn-sm btn-success mr-4 mt-4 ml-2">💰
+                Rent:{{home.monthlyCost}}</a>
+              <a href="javascript:void(0)" class="btn btn-sm btn-success mr-4 mt-4">💰
+                Deposit:{{home.securityDeposit}}</a>
+            </div>
+          </div>
+          <div class="mt-5 py-5 border-top text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-9">
+                <p>{{home.details}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,89 @@
+<main class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+        <!-- Circles background -->
+        <div class="shape shape-style-1 shape-primary alpha-4">
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <div class="alert alert-secondary" role="alert">
+                    <strong>Secondary!</strong> This is a secondary alert—check it out!
+                </div>
+                <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+
+    <section class="section">
+
+        <div class="container">
+            <div class="card card-profile shadow mt--300">
+                <div class="px-4">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 order-lg-2">
+                            <div class="card-profile-image">
+                                <a href="javascript:void(0)">
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card-profile-actions py-4 mt-lg-0">
+                                <h3 class="mb-4 d-flex justify-content-center">Get Info of Tenants & Homes at various
+                                    Locations :</h3>
+                                <button type="button" class="btn btn-sm btn-default" (click)="fetchData('Jakhan')">Jakhan</button>
+                                <button type="button" class="btn btn-sm btn-primary">Dalanwala</button>
+                                <button type="button" class="btn btn-sm btn-danger">Johri Gaon</button>
+                                <button type="button" class="btn btn-sm btn-info">Makkawala</button>
+                                <button type="button" class="btn btn-sm btn-success">Rajpur Road</button>
+                                <button type="button" class="btn btn-sm btn-danger">Vasant Vihar</button>
+                                <button type="button" class="btn btn-sm btn-warning">Race Course</button>
+                                <button type="button" class="btn btn-sm btn-primary">Malsi</button>
+                                <button type="button" class="btn btn-sm btn-danger">Chakrata</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 order-lg-1">
+                            <div class="card-profile-stats d-flex justify-content-center">
+
+                                <div>
+
+                                </div>
+                                <div>
+
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="msg" class="card-body px-lg-5 py-lg-5">
+                        <div>
+                            <div style="display: block">
+                              <canvas baseChart
+                              [datasets]="barChartData"
+                             [labels]="barChartLabels"
+                             [options]="barChartOptions"
+                             
+                             [legend]="barChartLegend"
+                            [chartType]="barChartType">
+                               >
+                              </canvas>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

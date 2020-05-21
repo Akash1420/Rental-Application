@@ -1,0 +1,149 @@
+<main>
+  <div class="position-relative">
+    <!-- shape Hero -->
+    <section class="section section-lg section-shaped pb-250">
+      <div class="shape shape-style-1 shape-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+          xmlns="http://www.w3.o/rg/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <!-- 1st Hero Variation -->
+  </div>
+
+
+
+
+
+
+
+  <section class="section section-lg pt-lg-0 mt--200">
+    <div class="container">
+      <h2 *ngIf="!message" style="text-align: center; color: #ffffff;">My Properties:</h2><br>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="row row-grid">
+            <div *ngIf="message" class="alert alert-warning" role="alert">
+              <strong>Info!</strong> You do not have any Homes..To see Your Homes Here, Add your Home First!   
+              </div> 
+            <div class="col-lg-4" *ngFor="let home of homes">
+              <div class="card card-lift--hover shadow border-0">
+                <div class="card-body py-5">
+                  <ngb-carousel (click)="open(classic,  'Notification', '')">
+                    <ng-template *ngFor="let im of home.urlOfImage; let index=i;" ngbSlide>
+                      <img src={{im}} class="img-fluid rounded shadow-lg" style="width: 350px;" alt="First slide">
+
+                    </ng-template>
+
+                  </ngb-carousel>
+
+                  <ng-template #classic let-c="close" let-d="dismiss">
+                    <div class="modal-content cl">
+                      <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-notification">{{home.name}}</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                          (click)="d('Cross click')">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="py-3 text-center">
+                          <ngb-carousel>
+                            <ng-template *ngFor="let im of home.urlOfImage; let index=i;" ngbSlide>
+                              <img src={{im}} class="img-fluid rounded shadow-lg" style="width: 450px;height: 260px;">
+
+                            </ng-template>
+
+                          </ngb-carousel>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+
+                        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal"
+                          (click)="c('Close click')">Close</button>
+                      </div>
+                    </div>
+                  </ng-template>
+
+                  <br>
+                  <h6 class="text-primary text-uppercase">{{home.name}}</h6>
+                  <p class="description mt-3">{{home.details}}</p>
+                  <div>
+                    <span class="badge badge-pill badge-primary">{{home.rooms}} BHK</span>
+                    <span class="badge badge-pill badge-primary">{{home.furnished}}</span>
+                    <span class="badge badge-pill badge-primary">Monthly Rent: {{home.monthlyCost}}</span>
+                    <span class="badge badge-pill badge-primary">Location: {{home.location}}</span>
+                    <span class="badge badge-pill badge-primary">Security Deposit: {{home.securityDeposit}}</span>
+                  </div>
+                  <a href="javascript:void(0)" (click)="updateProperty(home.id)" class="btn btn-primary mt-3"
+                    placement="bottom" ngbTooltip="Edit Property"><i class="fa fa-pencil-square-o"
+                      aria-hidden="true"></i></a>
+
+
+
+                  <a href="javascript:void(0)" class="btn btn-danger mt-3" placement="bottom"
+                    ngbTooltip="Delete Property" (click)="open(classic2,  'Notification', '')"><i class="fa fa-trash-o"
+                      aria-hidden="true"></i></a>
+
+
+
+                  <ng-template #classic2 let-c="close" let-d="dismiss">
+                    <div class="modal-content bg-gradient-danger">
+                      <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-notification">Confirm
+                          Deletion</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                          (click)="d('Cross click')">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="py-3 text-center">
+                          <img src="./assets/img/throw.svg">
+                          <h4 class="heading mt-4">Are you sure you want to delete this property?</h4>
+
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-white" (click)="deleteProperty(home.id)">Delete</button>
+                        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal"
+                          (click)="c('Close click')">Close</button>
+                      </div>
+                    </div>
+                  </ng-template>
+
+
+
+                  <a href="javascript:void(0)" class="btn btn-info mt-3" placement="bottom" ngbTooltip="Manage Customer"
+                    (click)="manageComponents(home.id)"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>

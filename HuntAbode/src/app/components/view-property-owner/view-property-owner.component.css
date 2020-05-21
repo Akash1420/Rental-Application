@@ -1,0 +1,19 @@
+.card{
+    margin-bottom: 20px;
+}
+h6{
+    text-align: center;
+}
+
+.delete{
+    width: 80px;
+}
+
+img{
+    width: 190px;
+    color: #ffffff;
+}
+
+.cl{
+    background: linear-gradient(90deg,#515ada  0%, #efd5ff 100%);
+}

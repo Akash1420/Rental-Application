@@ -1,0 +1,14 @@
+.card{
+    margin-bottom: 20px;
+}
+
+img{
+    margin-bottom: 20px;
+}
+.badge{
+    margin-right: 5px;
+}
+
+.cl{
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+}

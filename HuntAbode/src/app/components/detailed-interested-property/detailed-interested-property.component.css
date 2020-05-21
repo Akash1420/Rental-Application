@@ -1,0 +1,16 @@
+.badge{
+    margin-right: 15px;
+}
+.img{
+    width: 50%;
+}
+
+
+
+ngb-carousel:focus{
+  border: none;
+}
+
+.cl{
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+}

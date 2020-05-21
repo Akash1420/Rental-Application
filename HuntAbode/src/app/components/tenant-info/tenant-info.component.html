@@ -1,0 +1,78 @@
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <!-- ❌✔️ -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+
+
+      </svg>
+    </div>
+    
+  </section>
+
+
+  <section class="section section-lg pt-lg-0 mt--200">
+    
+    <div class="container jumbotron-fluid">
+      
+      <div class="card card-profile shadow mt--200">
+        <div *ngIf="message" class="alert alert-warning mt-3" role="alert">
+          <strong>Info!</strong> No Customers Found On this Home!
+          </div> 
+        <table *ngIf="!message" class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Date</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let tenant of tenants;let i=index;">
+
+            <tr>
+              <td>{{tenant.name}}</td>
+              <td>{{tenant.contactNumber}}</td>
+              <td>{{tenant.email}}</td>
+              <td>{{meetingDates[i]}}</td>
+              <td><span class="approve" *ngIf="approve[i]=='Approved'">APPROVED</span><span class="reject"
+                  *ngIf="approve[i]=='Rejected'">REJECTED</span><span class="pending"
+                  *ngIf="approve[i]=='Pending'">PENDING</span></td>
+              <td>
+                <button *ngIf="approve[i]=='Pending'" class=" btn btn-success left-align"
+                  (click)="updateApprove(tenant.id,i)" [disabled]="iRejects[i] || approve[i]!='Pending'"><i
+                    class="fa fa-pencil"></i> Approve</button>
+                <button *ngIf="approve[i]=='Pending'" class="btn btn-danger red" (click)="updateReject(tenant.id,i)"
+                  [disabled]="iApproves[i] || approve[i]!='Pending'"><i class="fa fa-remove "></i> Reject
+                </button>
+              </td>
+
+              <td>
+                <span *ngIf="iApproves[i]">✔️</span>
+                <span *ngIf="iRejects[i]">❌</span>
+              </td>
+
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>

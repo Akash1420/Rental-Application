@@ -1,0 +1,96 @@
+<section class="section section-lg section-shaped pb-250">
+    <div class="shape shape-style-1 shape-default">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span>
+    </div>
+
+
+    <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+    </div>
+
+</section>
+
+<section class="section section-lg pt-lg-0 mt--200">
+    <div class="container">
+        <div class="icon icon-shape icon-shape-neutral rounded-circle mr-2" (click)="back()" placement="left"
+            ngbTooltip="Go Back">⮌</div>
+        <div class="icon icon-shape icon-shape-info rounded-circle" (click)="interestHomes()" placement="right"
+            ngbTooltip="View Intrested Homes">❤️</div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="row row-grid">
+                    <div class="container py-lg-md d-flex">
+                        <h4 style="color:'white'">Homes at {{location}}</h4>
+                    </div>
+                    <div *ngIf="message" class="alert alert-warning" role="alert">
+                        <strong>Info!</strong> No Homes Found at {{location}}! 
+                        </div> 
+                    <div class="col-lg-4" *ngFor="let home of homes">
+                        <div class="card card-lift--hover shadow border-0">
+                            <div class="card-body py-5">
+
+                                <div class="img">
+                                    <ngb-carousel (click)="open(classic,  'Notification', '')">
+
+                                        <ng-template *ngFor="let im of home.urlOfImage; let index=i;" ngbSlide>
+                                            <img src={{im}} class="img-fluid rounded shadow-lg" style="width: 350px;"
+                                                alt="First slide">
+                                        </ng-template>
+                                    </ngb-carousel>
+                                </div>
+
+
+                                <ng-template #classic let-c="close" let-d="dismiss">
+                                    <div class="modal-content cl">
+                                        <div class="modal-header">
+                                            <h6 class="modal-title" id="modal-title-notification">{{home.name}}</h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                                (click)="d('Cross click')">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="py-3 text-center">
+                                                <ngb-carousel>
+                                                    <ng-template *ngFor="let im of home.urlOfImage; let index=i;"
+                                                        ngbSlide>
+                                                        <img src={{im}} class="img-fluid rounded shadow-lg"
+                                                            style="width: 450px;height: 260px;">
+
+                                                    </ng-template>
+
+                                                </ngb-carousel>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <button type="button" class="btn btn-link text-white ml-auto"
+                                                data-dismiss="modal" (click)="c('Close click')">Close</button>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                                <br>
+                                <h4 class="text-info text-uppercase">{{home.name}}</h4>
+                                <h6 class="text-primary text-uppercase">{{home.location}}</h6>
+                                <p class="description mt-3">{{home.details}}</p>
+                                <div>
+                                    <span class="badge badge-pill badge-primary">Rooms-{{home.rooms}}</span>
+                                    <span class="badge badge-pill badge-primary">Type-{{home.type}}</span>
+                                    <span class="badge badge-pill badge-primary">Cost-{{home.monthlyCost}}</span>
+                                </div>
+                                <button (click)="showDetails(home.id)" class="btn btn-primary mt-4">View this
+                                    home</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

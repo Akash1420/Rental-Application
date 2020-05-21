@@ -1,0 +1,103 @@
+<nav id="navbar-main"
+  class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+  <div class="container">
+
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/home']">
+              HuntAbode
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+              [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+        <li class="nav-item dropdown">
+          <a href="javascript:void(0)" class="nav-link no-caret" (click)="homeComponent()" data-toggle="dropdown"
+            role="button">
+            <i class="ni ni-ui-04 d-lg-none"></i>
+            <span class="nav-link-inner--text">Home</span>
+          </a>
+          <div class="dropdown-menu-xl dropdown-menu">
+            <div class="dropdown-menu-inner">
+              <a routerLinkActive="active" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                  <i class="ni ni-spaceship"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1" (click)="ownerComponent()">Owner</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Start Listing Homes.</p>
+                </div>
+              </a>
+              <a class="media d-flex align-items-center" (click)="tenantComponent()">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-palette"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Tenant</h6>
+                  <p class="description d-none d-md-inline-block mb-0">We do everything for you!</p>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">About</span>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="aboutComponent()">About Us</a>
+
+
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Insights</span>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="insightsComponent()">Insights</a>
+
+
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://github.com/vanshi1998/RentalAppProject" target="_blank"
+            data-toggle="tooltip" title="Star us on Github">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span class="nav-link-inner--text d-lg-none">Github</span>
+
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+
+          <h6 class="date">&nbsp; {{ now | date: 'EEEE, MMMM d, h:mm a'}} <i class="fa fa-sun-o"></i></h6>
+
+        </li>
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>

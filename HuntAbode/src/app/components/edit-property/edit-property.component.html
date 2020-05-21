@@ -1,0 +1,140 @@
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card card-profile shadow mt--300">
+        <div class="px-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 order-lg-2">
+              <div class="card-profile-image">
+                <a href="javascript:void(0)">
+
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+              <div class="card-profile-actions py-4 mt-lg-0">
+
+              </div>
+            </div>
+            <div class="col-lg-4 order-lg-1">
+              <div class="card-profile-stats d-flex justify-content-center">
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body px-lg-5 py-lg-5">
+            <h2 mb-4>Edit Home Details</h2><br>
+
+            <form role="form" (ngSubmit)="onSubmit()" [formGroup]="homeForm">
+              <div class="one">
+
+
+
+
+              </div>
+
+
+           
+
+              <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">👫</span>
+                  </div>
+                  <select class="form-control" required formControlName="occupancy" placeholder="Occupancy"
+                    (focus)="focus=true" (blur)="focus=false">
+                    <option value="" disabled selected hidden>Occupancy</option>
+                    <option value="Single">Single</option>
+                    <option value="Sharing">Sharing</option>
+
+                  </select>
+
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">⚠️</span>
+                  </div>
+                  <select class="form-control" required formControlName="status" value="Status" (focus)="focus=true"
+                    (blur)="focus=false">
+                    <option value="" disabled selected hidden>Availability</option>
+                    <option value="Available">Available</option>
+                    <option value="Rented">Rented</option>
+
+                  </select>
+
+                </div>
+              </div>
+
+         
+
+
+              <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">💸</span>
+                  </div>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Rs.</span>
+                  </div>
+                  <input class="form-control" required formControlName="monthlyCost" placeholder="Monthly Rent"
+                    type="number" (focus)="focus=true" (blur)="focus=false">
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">💰</span>
+                  </div>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Rs.</span>
+                  </div>
+                  <input class="form-control" required formControlName="securityDeposit" placeholder="Security Deposit"
+                    type="number" (focus)="focus=true" (blur)="focus=false">
+                </div>
+              </div>
+
+             
+
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary my-4">Update Details!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
