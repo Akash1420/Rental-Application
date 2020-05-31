@@ -10,7 +10,7 @@ Prerequisites :
 
 Steps for running the Application :
 
-1. Take a clone from our GitHub Repository https://github.com/vanshi1998/RentalAppProject/ to local machine.
+1. Take a clone from our GitHub Repository https://github.com/akash1420/Rental-Application/ to local machine.
 2. Open eclipse IDE under the Project Explorer Right Click and Import -> Existing Maven Project.
 3. Following the above Steps Import Netflix-Eureka, RentalApplication and RentalInsights in Eclipse.
 4. After it is imported go to Netflix-Eureka and run NetflixEurekaNamingServerApplication.java as Java Application.
