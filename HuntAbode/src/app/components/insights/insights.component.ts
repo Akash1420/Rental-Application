@@ -28,6 +28,7 @@ export class InsightsComponent implements OnInit {
   public noOfHomes:number;
   public noOfTenants:number;
   public location:string;
+  message:boolean=false;
   public msg:boolean=false;
  /*  myColors = [
     {
@@ -42,6 +43,8 @@ export class InsightsComponent implements OnInit {
 
   fetchData(location:string)
   {
+    this.message=false;
+    this.barChartLabels=[];
     this.msg=true;
     this.rentalService.getInsights(location).subscribe((res: rentalStore) => {
       
@@ -52,6 +55,11 @@ export class InsightsComponent implements OnInit {
 
       console.log("No. of Homes",res.noOfHomes);
       console.log("No. of Tenants",res.noOfTenants);
+       if(res.noOfHomes==0 && res.noOfTenants==0)
+      {
+        this.message=true;
+        console.log("Message=",this.message);
+      } 
       this.barChartLabels.push(this.location);
       console.log("barchartlabel=",this.barChartLabels);
       this.barChartData = [

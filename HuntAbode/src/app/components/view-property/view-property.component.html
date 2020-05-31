@@ -14,7 +14,8 @@
       <span class="badge badge-pill badge-pill1 badge-neutral text-uppercase ml-1 loc" (click)="locations('Rajpur
       Road')">Rajpur
         Road</span>
-      <span class="badge badge-pill badge-pill2 badge-neutral text-uppercase ml-1 loc" (click)="locations('Johri Gaon')">Johri Gaon</span>
+      <span class="badge badge-pill badge-pill2 badge-neutral text-uppercase ml-1 loc"
+        (click)="locations('Johri Gaon')">Johri Gaon</span>
       <span class="badge badge-pill badge-pill3 badge-neutral text-uppercase ml-1 loc"
         (click)="locations('Makkawala')">Makkawala</span>
       <span class="badge badge-pill badge-pill4 badge-neutral text-uppercase ml-1 loc"
@@ -78,9 +79,9 @@
 
 <section class="section section-lg pt-lg-0 mt--200">
   <div class="container">
-    <div class="btn btn-danger" (click)="interestHomes()">❤️ View
+    <div class="btn btn-danger mb-3" (click)="interestHomes()">❤️ View
       Interested Homes</div>
-    <div class="btn btn-info ml-4" (click)="home()">Sign out <i class="fa fa-sign-out ml-2" aria-hidden="true"></i>
+    <div class="btn btn-info ml-4 mb-3" (click)="home()">Sign out <i class="fa fa-sign-out ml-2" aria-hidden="true"></i>
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-12">
@@ -114,7 +115,7 @@
                       <div class="py-3 text-center">
                         <ngb-carousel>
                           <ng-template *ngFor="let im of home.urlOfImage; let index=i;" ngbSlide>
-                            <img src={{im}} class="img-fluid rounded shadow-lg" style="width: 450px;height: 260px;">
+                            <img src={{im}} class="img-fluid rounded shadow-lg">
 
                           </ng-template>
 

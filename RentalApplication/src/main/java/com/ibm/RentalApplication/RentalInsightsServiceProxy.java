@@ -19,6 +19,6 @@ public interface RentalInsightsServiceProxy {
 	public RentalStore fetchInsightsDetailByLocation(@RequestBody RentalStore rentalStore);
 	
 	@GetMapping("/location/{location}")
-	public RentalStore fetchStoreByLocation(@PathVariable String location);
+	public RentalStore fetchStoreByLocation(@PathVariable("location") String location);
 	
 }

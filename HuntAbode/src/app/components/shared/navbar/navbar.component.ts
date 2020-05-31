@@ -15,6 +15,8 @@ export class NavbarComponent implements OnInit {
     public isCollapsed = true;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
+    public isNight: boolean=false;
+    public isDay: boolean=true;
 
 
     public now: Date = new Date();
@@ -22,7 +24,8 @@ export class NavbarComponent implements OnInit {
     constructor(public location: Location, private router: Router) {
         setInterval(() => {
             this.now = new Date();
-        }, 1);
+        }, 5000);
+        
     }
 
     ngOnInit() {
@@ -42,6 +45,10 @@ export class NavbarComponent implements OnInit {
         this.location.subscribe((ev: PopStateEvent) => {
             this.lastPoppedUrl = ev.url;
         });
+        if(this.now.getHours()>18 || this.now.getHours()<7){
+            this.isNight=true;
+            this.isDay=false;
+        }
 
 
     }

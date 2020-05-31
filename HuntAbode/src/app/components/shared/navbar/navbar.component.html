@@ -57,7 +57,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">About</span>
+            <span class="nav-link-inner--text" (click)="aboutComponent()">About</span>
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item" (click)="aboutComponent()">About Us</a>
@@ -67,8 +67,8 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Insights</span>
+            <i class="fa fa-bar-chart d-lg-none" aria-hidden="true"></i>
+            <span class="nav-link-inner--text" (click)="insightsComponent()">Insights</span>
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item" (click)="insightsComponent()">Insights</a>
@@ -88,10 +88,33 @@
           </a>
         </li>
 
+        <div>
+        <li class="nav-item">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+
+            <span class="nav-link-inner--text date">{{ now | date: 'EEEE, MMMM d, h:mm a'}}
+              <i class="fa fa-sun-o" *ngIf="isDay"></i>
+              <i class="fa fa-moon-o" *ngIf="isNight"></i></span>
+             
+          </a>
+        </li>
+        </div>
+
+        <!-- <div *ngIf="isNight">
+          <li class="nav-item">
+            <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+  
+              <span class="nav-link-inner--text date">{{ now | date: 'EEEE, MMMM d, h:mm a'}}
+                <i class="fa fa-moon-o"></i></span>
+               
+            </a>
+          </li>
+          </div> -->
+
 
         <li class="nav-item">
 
-          <h6 class="date">&nbsp; {{ now | date: 'EEEE, MMMM d, h:mm a'}} <i class="fa fa-sun-o"></i></h6>
+
 
         </li>
 

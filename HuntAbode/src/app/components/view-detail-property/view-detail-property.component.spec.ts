@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewDetailPropertyComponent } from './view-detail-property.component';
 
@@ -22,4 +22,4 @@ describe('ViewDetailPropertyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/

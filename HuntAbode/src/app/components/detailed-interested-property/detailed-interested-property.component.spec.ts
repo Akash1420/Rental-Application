@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DetailedInterestedPropertyComponent } from './detailed-interested-property.component';
 
@@ -22,4 +22,4 @@ describe('DetailedInterestedPropertyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/

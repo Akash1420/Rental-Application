@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AllPropertiesComponent } from './all-properties.component';
 
@@ -22,4 +22,4 @@ describe('AllPropertiesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/   
