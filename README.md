@@ -14,7 +14,7 @@ Steps for running the Application :
 2. Open eclipse IDE under the Project Explorer Right Click and Import -> Existing Maven Project.
 3. Following the above Steps Import Netflix-Eureka, RentalApplication and RentalInsights in Eclipse.
 4. After it is imported go to Netflix-Eureka and run NetflixEurekaNamingServerApplication.java as Java Application.
-5. Once step 4 has been executed Successfully , go to RentalApplication in your Project Explorer.
+5. Once step 4 has been executed Successfully, go to RentalApplication in your Project Explorer.
 6. In the application.properties of RentalApplication change spring.datasource.username, spring.datasource.password and spring.datasource.url to your database username, password and url.
 7. Once this is done save changes and Run RentalApplication.java as Java Application.
 8. After this go to the RentalInsights Application in your Project Explorer.
